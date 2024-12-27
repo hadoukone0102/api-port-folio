@@ -15,8 +15,13 @@ class ContactController extends Controller
     public function index()
     {
         //
-        $my_name = "kone hadou";
-        var_dump($my_name);
+        $All_message = Contact::get();
+       return response()->json([
+            "message"=>"La liste à été recupérer avec succès",
+            "data"=>$All_message,
+            "status"=>true,
+            "code"=>200
+       ],200);
     }
 
     /**
